@@ -1,169 +1,85 @@
-<html>
-    <head>
-        <link type="text/css" rel="stylesheet" href="./style.css">
-    </head>
-    <body>
-        <i>Disclaimer: this is TSI University task for HTML, CSS and SASS workshop, not for publishing anywhere on the media. Please include this disclaimer</i><br />
-        <i>Authors: st53806, st84883</i>
-        <h1 class="text-center">What is Sass? Your guide to this top CSS preprocessor</h1>
-        <i>By Tammy Coron January 10, 2020</i>
-        <h2 class="text-center">Discover what Sass is, and learn how to start using it.</h2>
-        <p><i><b>What is Sass? That's the question we here to answer. If you're new to web design, you've probably heard the term floating around, but you might not be quite up to speed with exactly what Sass is, what is does, and whether or not you should be using it. In short, Sass is a CSS preprocessor, which adds special features such as variables, nested rules and mixins (sometimes referred to as syntactic sugar) into regular CSS. The aim is to make the coding process simpler and more efficient. Let's explore in more detail. </i></b></p>
-        <p>A CSS preprocessor is a scripting language that extends CSS by allowing developers to write code in one language and then compile it into CSS. Sass is perhaps the most popular preprocessor around right now, but other well-known examples include Less and Stylus.</p>
-        <p>Before we go any further, a quick public service announcement is in order: most web designers would say that if you're new to CSS, you're better off avoiding Sass (or any preprocessors, extensions or frameworks) while you're still learning. While it's true they offer many advantages in speed and efficiency, it's important that you really get to grips with the basics of CSS. Make sure you learn the core concepts before you start exploring shortcuts and confusing things.</p>
-        <h2>What is Sass?</h2>
-        <b>Sass is arguably the most useful of all CSS extensions</b>
-        <p>Sass (which stands for 'Syntactically awesome style sheets) is an extension of CSS that enables you to use things like variables, nested rules, inline imports and more. It also helps to keep things organised and allows you to create style sheets faster.</p>
-        <p>Sass is compatible with all versions of CSS. The only requirement for using it is that you must have Ruby installed. Users are also asked to follow the Sass Community Guidelines.
-How to use Sass</p>
-        <p>In the following section, we'll outline some basic tips for using Sass, using examples from the official Sass website. Take a look at the Sass Documentation for additional references and examples.</p>
-        <h1>Syntax</h1>
-        <p>Sass includes two syntax options:</p>
-        <ul>
-            <li>SCSS (Sassy CSS): Uses the .scss file extension and is fully compliant with CSS syntax</li>
-            <li>Indented (simply called 'Sass'): Uses .sass file extension and indentation rather than brackets; it is not fully compliant with CSS syntax, but it's quicker to write</li>
-        </ul>
-        <i>Note that files can be converted from one syntax to the other using the sass-convert command.</i>
-        <h2>Variables</h2>
-        <p>Just like other programming languages, Sass allows the use of variables that can store information you can use throughout your style sheet. For example, you can store a colour value in a variable at the top of the file, and then use this variable when setting the colour of your elements. This enables you to quickly change your colours without having to modify each line separately.
-        </p>
-        <p>For example:</p>
-        <i>
-            $font-stack:    Helvetica,sans-serif;<br />
-            $primary-color: #333;<br />
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f5f2">
+  <meta name="description" content="Boris is a software engineer with 15 years of experience building medical software for ENT professionals.">
+  <title>Boris — Software Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="cv.css">
+  <script src="cv.js" defer></script>
+</head>
+<body>
+  <header class="topbar wrap">
+    <a class="wordmark" href="#home" aria-label="Home">B<span>.</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#about">About</a><a href="#expertise">Expertise</a><a href="#projects">Projects</a><a href="#experience">Experience</a>
+    </nav>
+    <a class="top-contact" href="#contact">Get in touch <span>↗</span></a>
+  </header>
 
-            body {<br />
-            <span class="pl-1">font: 100% $font-stack;</span><br />
-            <span class="pl-1">color: $primary-color;</span><br />
-            }
+  <main>
+    <section class="hero wrap" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot"></span> SOFTWARE ENGINEER · MEDTECH</p>
+        <h1>I build software<br>that <em>helps</em><br>doctors.</h1>
+        <p class="hero-intro">For 15 years, I’ve been building medical software and tools for ear, nose and throat (ENT) professionals.</p>
+        <div class="hero-actions"><a class="button" href="#experience">Explore my experience <span>↓</span></a><a class="text-link" href="#contact">Let’s talk about your project <span>↗</span></a></div>
+        <div class="hero-meta"><span>BASED IN EUROPE</span><span>15 YEARS IN SOFTWARE</span></div>
+      </div>
+      <div class="portrait-card">
+        <img class="portrait-photo" src="assets/portrait.png" alt="Boris, software engineer">
+        <p class="photo-note">Software engineer · MedTech</p>
+      </div>
+      <a class="scroll-cue" href="#about" aria-label="Scroll down">↓</a>
+    </section>
 
-            <p>The following CSS will be produced:</p>
+    <section class="about section wrap" id="about">
+      <div class="section-label"><span>01</span> / PROFILE</div>
+      <div class="about-content"><h2>Technology matters when<br>it <em>makes life easier.</em></h2><div class="about-columns"><p>I’m a software engineer focused on healthcare. I turn complex workflows into clear, dependable digital tools that support clinicians.</p><p>My work has centered on ENT software, helping specialists and clinics simplify the practical, day-to-day work of care.</p></div></div>
+    </section>
 
-            body {<br />
-            <span class="pl-1">font: 100% Helvetica, sans-serif;</span><br />
-            <span class="pl-1">color: #333;</span><br />
-            }
-        </i>
-        <h2>Nesting</h2>
-        <p>Nesting is a double-edged sword. While it provides an excellent method for reducing the amount of code you need to write, it can also lead to over-qualified CSS if not executed carefully. The idea is to nest your CSS selectors in such a way as to mimic your HTML hierarchy.</p>
-        <p>The following shows a basic navigation style that uses nesting:</p>
-        <i>
-            nav {<br />
-                ul {<br />
-                    <span class="pl-1">margin: 0;</span><br />
-                    <span class="pl-1">padding: 0;</span><br />
-                    <span class="pl-1">list-style: none;</span><br />
-                }<br />
+    <section class="expertise section wrap" id="expertise">
+      <div class="section-label"><span>02</span> / EXPERTISE</div>
+      <div class="expertise-content"><h2>Tools for<br><em>real-world needs.</em></h2><div class="skill-groups">
+        <div class="skill-group"><span class="group-name">FRAMEWORKS</span><div class="chips"><span>Vue.js</span><span>React</span><span>Blazor</span></div></div>
+        <div class="skill-group"><span class="group-name">BACKEND</span><div class="chips"><span>PHP</span><span>.NET</span></div></div>
+        <div class="skill-group"><span class="group-name">PLATFORM</span><div class="chips"><span>Microsoft Azure</span></div></div>
+        <div class="skill-group"><span class="group-name">DOMAIN</span><div class="chips"><span>MedTech</span><span>ENT</span><span>Healthcare software</span></div></div>
+      </div></div>
+    </section>
 
-                li { display: inline-block; }<br />
+    <section class="projects section wrap" id="projects">
+      <div class="section-label"><span>03</span> / SELECTED WORK</div>
+      <div class="projects-content">
+        <div class="projects-heading"><h2>Ideas for<br><em>better care.</em></h2><p>Illustrative concepts inspired by my MedTech experience. These are fictional examples, not client projects.</p></div>
+        <div class="project-grid">
+          <article class="project-card project-card-featured">
+            <div class="project-visual visual-clinic"><div class="visual-window"><span class="visual-topline"></span><span class="visual-line"></span><span class="visual-line short"></span><div class="visual-panel"><i></i><i></i><i></i></div></div><span class="visual-label">01 — CONCEPT</span></div>
+            <div class="project-info"><div><span class="project-type">CLINICAL WORKFLOW · ENT</span><h3>Clinic Flow</h3></div><span class="project-arrow">↗</span><p>A fictional clinic workflow concept for managing appointments, patient records and daily tasks in one clear workspace.</p><div class="project-tags"><span>Vue.js</span><span>.NET</span><span>Azure</span></div></div>
+          </article>
+          <article class="project-card">
+            <div class="project-visual visual-audio"><div class="audio-rings"><i></i><i></i><i></i><b>ENT</b></div><span class="visual-label">02 — CONCEPT</span></div>
+            <div class="project-info"><div><span class="project-type">PATIENT EXPERIENCE</span><h3>HearWell</h3></div><span class="project-arrow">↗</span><p>A fictional patient companion concept for guiding people through hearing assessments and follow-up care.</p><div class="project-tags"><span>React</span><span>PHP</span></div></div>
+          </article>
+          <article class="project-card">
+            <div class="project-visual visual-insights"><div class="chart-bars"><i></i><i></i><i></i><i></i><i></i><i></i></div><span class="visual-label">03 — CONCEPT</span></div>
+            <div class="project-info"><div><span class="project-type">HEALTHCARE ANALYTICS</span><h3>Care Insights</h3></div><span class="project-arrow">↗</span><p>A fictional dashboard concept that helps care teams spot service patterns and monitor operational indicators.</p><div class="project-tags"><span>Blazor</span><span>.NET</span><span>Azure</span></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-                a {<br />
-                    <span class="pl-1">display: block;</span><br />
-                    <span class="pl-1">padding: 6px 12px;</span><br />
-                    <span class="pl-1">text-decoration: none;</span><br />
-                }<br />
-            }
-        </i>
-        <p>The CSS output is as follows:</p>
-        <i>nav ul {<br />
-            <span class="pl-1">margin: 0;</span><br />
-            <span class="pl-1">padding: 0;</span><br />
-            l<span class="pl-1">ist-style: none;</span><br />
-        }<br />
+    <section class="experience section wrap" id="experience">
+      <div class="section-label"><span>04</span> / EXPERIENCE</div>
+      <div class="experience-content"><div class="experience-heading"><h2>Fifteen years<br><em>of practice.</em></h2><span class="since">15 YEARS · MEDTECH</span></div><article class="experience-card"><div class="card-top"><span class="card-number">01</span><span class="card-tag">MEDICAL SOFTWARE</span></div><h3>Software Engineer</h3><p class="card-focus">Healthcare products · ENT</p><p>Building and evolving software for healthcare, with a focus on tools that streamline everyday workflows for ear, nose and throat professionals.</p><div class="card-skills"><span>PHP</span><span>Vue.js</span><span>React</span><span>.NET</span><span>Blazor</span><span>Azure</span></div></article></div>
+    </section>
 
-        nav li {<br />
-            <span class="pl-1">display: inline-block;</span><br />
-        }<br />
-
-        nav a {<br />
-            <span class="pl-1">display: block;</span><br />
-            <span class="pl-1">padding: 6px 12px;</span><br />
-            <span class="pl-1">text-decoration: none;</span><br />
-        }
-        </i>
-
-        <p>Partials are smaller Sass files that can be imported (see next section) into other Sass files. Think of partials as code snippets. With these code snippets, your CSS can now be modular and easier to maintain. A partial is designated as such by naming it with a leading underscore: _partial.scss.
-Import</p>
-
-<p>Used with Partials (see previous section), the @import directive allows you to import your partial files into the current file, to build one single CSS file. Be mindful of how many imports you're using as an HTTP request will be generated for each one.</p>
-
-<p>// _reset.scss</p>
-
-<i>html,<br />
-body,<br />
-ul,<br />
-ol {<br />
-    <span class="pl-1">margin: 0;</span><br />
-    <span class="pl-1">padding: 0;</span><br />
-}<br /></i>
-
-<i>// basefile.scss
-
-@import 'reset';<br /><br />
-
-body {<br />
-  <span class="pl-1">font: 100% Helvetica, sans-serif;</span><br />
-  <span class="pl-1">background-color: #efefef;</span><br />
-}<br /><br />
-
-And the corresponding CSS output:<br /><br />
-
-html, body, ul, ol {<br />
-  <span class="pl-1">margin: 0;</span><br />
-  <span class="pl-1">padding: 0;</span><br />
-}<br /><br />
-
-body {<br />
-  <span class="pl-1">font: 100% Helvetica, sans-serif;</span><br />
-  <span class="pl-1">background-color: #efefef;</span><br />
-}<br />
-
-Note: When importing partials, you don't need to include the file extension or the underscore.
-</i>
-<h2>Mixins</h2>
-<p><b>One of the advantages of using preprocessors is their ability to take complex, long-winded code and simplify it. This is where mixins come in handy!</b></p>
-
-<p>For example, if you need to include the vendor prefixes, you can use a mixin instead. Take a look at this example for border-radius:</p>
-
-<i>
-@mixin border-radius($radius) {<br />
-    <span class="pl-1">-webkit-border-radius: $radius;</span><br />
-    <span class="pl-1">moz-border-radius: $radius;</span><br />
-    <span class="pl-1">-ms-border-radius: $radius;</span><br />
-    <span class="pl-1">border-radius: $radius;</span><br />
-}<br /><br />
-
-.box { @include border-radius(10px); }
-</i>
-
-<p>Notice the @mixin directive at the top. It has been given the name border-radius and uses the variable $radius as its parameter. This variable is used to set the radius value for each element.</p>
-
-<p>Later, the @include directive is called, along with the mixin name (border-radius) and a parameter (10px). Thus .box { @include border-radius(10px); }.</p>
-
-<p><b>The following CSS is produced:</b></p>
-
-<i>
-.box {<br />
-    <span class="pl-1">-webkit-border-radius: 10px;</span><br />
-    <span class="pl-1">-moz-border-radius: 10px;</span><br />
-    <span class="pl-1">-ms-border-radius: 10px;</span><br />
-    <span class="pl-1">border-radius: 10px;</span><br />
-}
-</i>
-
-<h2>Extend/Inheritance</h2>
-
-<p>The @extend directive has been called one of Sass' most powerful features. After seeing it in action, it's clear why.</p>
-
-<p>The idea is that with this directive you won't have to include multiple class names on your HTML elements and can keep your code DRY (don't repeat yourself). Your selectors can inherit the styles of other selectors, and then be easily extended when required. Now that's powerful.
-Operators</p>
-
-<p>Having the ability to perform calculations in your CSS allows you to do more, like convert pixel values into percentages. You'll have access to standard maths functions like addition, subtraction, multiplication and division. Of course, these functions can be combined to create complex calculations.</p>
-
-<p>In addition, Sass includes a few built-in functions to help manipulate numbers. Functions like percentage(), floor() and round() to name a few.</p>
-
-<h2>Tammy Coron</h2>
-
-<p>Tammy is an independent creative professional and the host of Roundabout: Creative Chaos. She’s also the owner of Just Write Code, an independent production company located in West Tennessee. For more information about Tammy, visit her website by clicking the icons above. </p>
-    </body>
+    <section class="contact-section" id="contact"><div class="wrap contact-inner"><div><p class="eyebrow">HAVE A PROJECT IN MIND?</p><h2>Let’s build<br><em>something useful.</em></h2></div><span class="contact-button" aria-hidden="true">↗</span></div></section>
+  </main>
+  <footer class="footer wrap"><a class="wordmark" href="#home">B<span>.</span></a><span>Made with care for the details · <span id="year"></span></span></footer>
+</body>
 </html>
