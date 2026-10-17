@@ -1,16 +1,13 @@
 <html>
     <head>
-        <style type="text/css">
-            .center {
-                text-align: center;
-            }
-        </style>
+        <link type="text/css" rel="stylesheet" href="./style.css">
     </head>
     <body>
-        <i>Disclaimer: this is TSI University task for HTML, CSS and SASS workshop, not for publishing anywhere on the media. Please include this disclaimer</i>
-        <h1 class="center">What is Sass? Your guide to this top CSS preprocessor</h1>
+        <i>Disclaimer: this is TSI University task for HTML, CSS and SASS workshop, not for publishing anywhere on the media. Please include this disclaimer</i><br />
+        <i>Authors: st53806, st84883</i>
+        <h1 class="text-center">What is Sass? Your guide to this top CSS preprocessor</h1>
         <i>By Tammy Coron January 10, 2020</i>
-        <h2 class="center">Discover what Sass is, and learn how to start using it.</h2>
+        <h2 class="text-center">Discover what Sass is, and learn how to start using it.</h2>
         <p><i><b>What is Sass? That's the question we here to answer. If you're new to web design, you've probably heard the term floating around, but you might not be quite up to speed with exactly what Sass is, what is does, and whether or not you should be using it. In short, Sass is a CSS preprocessor, which adds special features such as variables, nested rules and mixins (sometimes referred to as syntactic sugar) into regular CSS. The aim is to make the coding process simpler and more efficient. Let's explore in more detail. </i></b></p>
         <p>A CSS preprocessor is a scripting language that extends CSS by allowing developers to write code in one language and then compile it into CSS. Sass is perhaps the most popular preprocessor around right now, but other well-known examples include Less and Stylus.</p>
         <p>Before we go any further, a quick public service announcement is in order: most web designers would say that if you're new to CSS, you're better off avoiding Sass (or any preprocessors, extensions or frameworks) while you're still learning. While it's true they offer many advantages in speed and efficiency, it's important that you really get to grips with the basics of CSS. Make sure you learn the core concepts before you start exploring shortcuts and confusing things.</p>
@@ -36,15 +33,15 @@ How to use Sass</p>
             $primary-color: #333;<br />
 
             body {<br />
-            &emsp;font: 100% $font-stack;<br />
-            &emsp;color: $primary-color;<br />
+            <span class="pl-1">font: 100% $font-stack;</span><br />
+            <span class="pl-1">color: $primary-color;</span><br />
             }
 
             <p>The following CSS will be produced:</p>
 
             body {<br />
-            &emsp;font: 100% Helvetica, &emsp;sans-serif;<br />
-            &emsp;color: #333;<br />
+            <span class="pl-1">font: 100% Helvetica, sans-serif;</span><br />
+            <span class="pl-1">color: #333;</span><br />
             }
         </i>
         <h2>Nesting</h2>
@@ -53,35 +50,35 @@ How to use Sass</p>
         <i>
             nav {<br />
                 ul {<br />
-                    &emsp;margin: 0;<br />
-                    &emsp;padding: 0;<br />
-                    &emsp;list-style: none;<br />
+                    <span class="pl-1">margin: 0;</span><br />
+                    <span class="pl-1">padding: 0;</span><br />
+                    <span class="pl-1">list-style: none;</span><br />
                 }<br />
 
                 li { display: inline-block; }<br />
 
                 a {<br />
-                    &emsp;display: block;<br />
-                    &emsp;padding: 6px 12px;<br />
-                    &emsp;text-decoration: none;<br />
+                    <span class="pl-1">display: block;</span><br />
+                    <span class="pl-1">padding: 6px 12px;</span><br />
+                    <span class="pl-1">text-decoration: none;</span><br />
                 }<br />
             }
         </i>
         <p>The CSS output is as follows:</p>
         <i>nav ul {<br />
-            &emsp;margin: 0;<br />
-            &emsp;padding: 0;<br />
-            l&emsp;ist-style: none;<br />
+            <span class="pl-1">margin: 0;</span><br />
+            <span class="pl-1">padding: 0;</span><br />
+            l<span class="pl-1">ist-style: none;</span><br />
         }<br />
 
         nav li {<br />
-            &emsp;display: inline-block;<br />
+            <span class="pl-1">display: inline-block;</span><br />
         }<br />
 
         nav a {<br />
-            &emsp;display: block;<br />
-            &emsp;padding: 6px 12px;<br />
-            &emsp;text-decoration: none;<br />
+            <span class="pl-1">display: block;</span><br />
+            <span class="pl-1">padding: 6px 12px;</span><br />
+            <span class="pl-1">text-decoration: none;</span><br />
         }
         </i>
 
@@ -96,8 +93,8 @@ Import</p>
 body,<br />
 ul,<br />
 ol {<br />
-    &emsp;margin: 0;<br />
-    &emsp;padding: 0;<br />
+    <span class="pl-1">margin: 0;</span><br />
+    <span class="pl-1">padding: 0;</span><br />
 }<br /></i>
 
 <i>// basefile.scss
@@ -105,20 +102,20 @@ ol {<br />
 @import 'reset';<br /><br />
 
 body {<br />
-  &emsp;font: 100% Helvetica, sans-serif;<br />
-  &emsp;background-color: #efefef;<br />
+  <span class="pl-1">font: 100% Helvetica, sans-serif;</span><br />
+  <span class="pl-1">background-color: #efefef;</span><br />
 }<br /><br />
 
 And the corresponding CSS output:<br /><br />
 
 html, body, ul, ol {<br />
-  &emsp;margin: 0;<br />
-  &emsp;padding: 0;<br />
+  <span class="pl-1">margin: 0;</span><br />
+  <span class="pl-1">padding: 0;</span><br />
 }<br /><br />
 
 body {<br />
-  &emsp;font: 100% Helvetica, sans-serif;<br />
-  &emsp;background-color: #efefef;<br />
+  <span class="pl-1">font: 100% Helvetica, sans-serif;</span><br />
+  <span class="pl-1">background-color: #efefef;</span><br />
 }<br />
 
 Note: When importing partials, you don't need to include the file extension or the underscore.
@@ -130,10 +127,10 @@ Note: When importing partials, you don't need to include the file extension or t
 
 <i>
 @mixin border-radius($radius) {<br />
-    &emsp;-webkit-border-radius: $radius;<br />
-    &emsp;moz-border-radius: $radius;<br />
-    &emsp;-ms-border-radius: $radius;<br />
-    &emsp;border-radius: $radius;<br />
+    <span class="pl-1">-webkit-border-radius: $radius;</span><br />
+    <span class="pl-1">moz-border-radius: $radius;</span><br />
+    <span class="pl-1">-ms-border-radius: $radius;</span><br />
+    <span class="pl-1">border-radius: $radius;</span><br />
 }<br /><br />
 
 .box { @include border-radius(10px); }
@@ -147,10 +144,10 @@ Note: When importing partials, you don't need to include the file extension or t
 
 <i>
 .box {<br />
-    &emsp;-webkit-border-radius: 10px;<br />
-    &emsp;-moz-border-radius: 10px;<br />
-    &emsp;-ms-border-radius: 10px;<br />
-    &emsp;border-radius: 10px;<br />
+    <span class="pl-1">-webkit-border-radius: 10px;</span><br />
+    <span class="pl-1">-moz-border-radius: 10px;</span><br />
+    <span class="pl-1">-ms-border-radius: 10px;</span><br />
+    <span class="pl-1">border-radius: 10px;</span><br />
 }
 </i>
 
